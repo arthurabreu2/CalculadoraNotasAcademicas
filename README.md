@@ -15,5 +15,5 @@ A nota será calculada de acordo com:
 2. pontuação >= 80: "B"
 3. pontuação >= 70: "C"
 4. pontuaçãO >= 60: "D"
-Além disso, calcule a média total da classe e a nota da classe.
-"""
+
+Além disso, calcule a média total da classe e a nota da classe."""
