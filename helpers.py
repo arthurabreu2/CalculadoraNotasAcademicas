@@ -1,5 +1,33 @@
-from main import alunos
-
+alunos = {
+    "arthurv":
+        {
+            'nome': 'Arthur Vinicius',
+            'trabalhos': [90, 95, 80, 100],
+            'provas': [90, 80],
+            'laboratorio': [70, 85.2]
+        },
+    "refaelas":
+        {
+            'nome': 'Rafaela Santos ',
+            'trabalhos': [100, 60, 80, 90],
+            'provas': [87, 95],
+            'laboratorio': [60, 75]
+        },
+    "samuelb":
+        {
+            'nome': 'Samuel Batista',
+            'trabalhos': [78, 95, 65, 88],
+            'provas': [70, 60],
+            'laboratorio': [60, 85.5]
+        },
+    "josec":
+        {
+            'nome': 'Jose Carlos',
+            'trabalhos': [100, 95, 80, 100],
+            'provas': [90, 95],
+            'laboratorio': [70, 75.5]
+        },
+}
 
 # Função 1 » Obter a media das notas
 
@@ -9,9 +37,9 @@ def obter_media(notas):
     :param notas: lista com notas de cada tipo de teste avaliado (provas, trabalhos, laboratorio)
     :return: média das notas dentro da lista informada
     """
-    total_somas = sum(notas)
-    total_somas = float(total_somas)
-    return total_somas / len(notas)
+    total_soma = sum(notas)
+    total_soma = float(total_soma)
+    return total_soma / len(notas)
 
 
 # Função 2 » Média com base nos pesos
@@ -22,10 +50,10 @@ def calcular_media_total(aluno):
     :param aluno: dicionario com dados do aluno
     :return: media final com base nos pesos
     """
-    trabalhos = obter_media(aluno['trabalhos'])      # 25% das notas obtidas na submissão do trabalho
-    provas = obter_media(aluno['provas'])           # 55% das notas obtidas nas  provas
-    laboratorio = obter_media(['laboratorio'])    # 20% das notas obtidas no laboratorio
-    return (o.25 * trabalhos + 0.55 * provas + 0.20 * laboratorio)
+    trabalhos = obter_media(aluno['trabalhos'])         # 25% das notas obtidas na submissão do trabalho
+    provas = obter_media(aluno['provas'])               # 55% das notas obtidas nas  provas
+    laboratorio = obter_media(aluno['laboratorio'])          # 20% das notas obtidas no laboratorio
+    return (0.25 * trabalhos + 0.55 * provas + 0.20 * laboratorio)
 
 
 # Função 3 » Atribuir a letra a nota
@@ -43,7 +71,7 @@ def atribuir_letra_nota(nota_final_aluno):
     elif nota_final_aluno >= 70:
         return "C"
     elif nota_final_aluno >= 60:
-        return "D
+        return "D"
     else:
         return "F"
 

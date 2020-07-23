@@ -16,33 +16,19 @@ A nota será calculada de acordo com:
 Além disso, calcule a média total da classe e a nota da classe.
 """
 
-alunos = {
-    "arthurv":
-        {
-            'nome': 'Arthur Vinicius'
-            'trabalhos': [90, 95, 80, 100],
-            'provas': [90, 80]
-            'laboratorio': [70, 85.2]
-        },
-    "refaelas":
-        {
-            'nome': 'Rafaela Santos '
-            'trabalhos': [100, 60, 80, 90],
-            'provas': [87, 95]
-            'laboratorio': [60, 75]
-        },
-    "samuelb":
-        {
-            'nome': 'Samuel Batista'
-            'trabalhos': [78, 95, 65, 88],
-            'provas': [70, 60]
-            'laboratorio': [60, 85.5]
-        },
-    "josec":
-        {
-            'nome': 'Jose Carlos'
-            'trabalhos': [100, 95, 80, 100],
-            'provas': [90, 95]
-            'laboratorio': [70, 75.5]
-        },
-}
+from helpers import alunos, calcular_media_total, atribuir_letra_nota, nota_media_classe
+
+if __name__ == '__main__':
+    # forlooping no dicionario de alunos e calcular as respectivas notas
+    for aluno, detalhes in alunos.items():
+        print(f"\n {alunos[aluno]['nome']} ")
+        print('_______________')
+        media_total_aluno = round(calcular_media_total(alunos[aluno]), 1)
+        print(f"Média de notas do(a) {alunos[aluno]['nome']} é: {round(calcular_media_total(alunos[aluno]), 1)}")
+        print(f"Nota final do aluno(a) {alunos[aluno]['nome']} é: {atribuir_letra_nota(media_total_aluno)}")
+
+    # Calcula a média da classe
+    media_classe = nota_media_classe()
+
+    print(f"\nMédia da classe é: {round(media_classe, 1)}")
+    print(f"Nota final da classe é: {atribuir_letra_nota(media_classe)}")
